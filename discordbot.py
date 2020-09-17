@@ -198,5 +198,5 @@ bot.add_cog(CommandErrorHandler(bot))
 bot.add_cog(Moderation(bot))
 
 ###IMPORTANT####
-bot.run("Njc1MTIwMjgzNjc3NjIyMzEy.Xjygwg.D3eMg3jvaKWIuoIsOSSoHSAM-aQ")
+bot.run("Token")
 ###IMPORTANT###

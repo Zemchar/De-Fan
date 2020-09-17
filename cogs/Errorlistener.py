@@ -2,9 +2,6 @@ import discord
 import sys
 import traceback
 import asyncio
-import functools
-import itertools
-import youtube_dl
 from async_timeout import timeout
 from discord.ext import commands
 from discord import message
@@ -13,14 +10,6 @@ from discord import permissions
 from discord.ext.commands import has_permissions, MissingPermissions, Cog, BucketType
 from discord.ext.commands import (CommandNotFound, BadArgument, MissingRequiredArgument, CommandOnCooldown)
 from asyncio import sleep
-import json
-import os
-import random
-from random import choice
-import math
-import datetime
-from datetime import timezone, tzinfo, timedelta
-import time
 
 class CommandErrorHandler(commands.Cog):
     @commands.Cog.listener()

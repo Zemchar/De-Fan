@@ -1,7 +1,11 @@
 import discord 
 import sys
 import traceback
+from cogs import commands
+from cogs import Errorlistener
+from cogs import music
 from music import Music
+from Errorlistener import CommandErrorHandler
 from commands import fun
 from discord import Spotify
 import asyncio
@@ -50,7 +54,7 @@ async def on_ready():
 #help command
 @bot.command()
 async def help(ctx):
-    await ctx.channel.send(f"***Current Commands***\nHelp - Displays this Help message \nPing - Fetches latency of bot (Aliases: Pong) \nKill - kills a member [.kill @target] (Aliases: gun) \n8ball - Magic 8 ball (Aliases: _8ball, 8ofcircles)\nCopypasta - gets a random copypasta \nhorny - banishes a user to horny jail (Aliases: hjail, jail) \n-------------------------------------------------\nThe code is open source and avalible on https://github.com/N3utr1n0/DiscordBotButBad")
+    await ctx.channel.send(f"***Current Commands***\nHelp - Displays this Help message \nPing - Fetches latency of bot (Aliases: Pong) \nKill - kills a member (Aliases: gun) \n8ball - Magic 8 ball (Aliases: _8ball, 8ofcircles)\nCopypasta - gets a random copypasta \nhorny - banishes a user to horny jail (Aliases: hjail, jail) \n-------------------------------------------------\nThe code is open source and avalible on https://github.com/N3utr1n0/DiscordBotButBad")
 
 #fetch latency
 @bot.command(aliases=["pong"])
@@ -168,26 +172,6 @@ class Moderation(commands.Cog):
             await ctx.send(f"{user.mention} has been unmuted")
 
 
-                                
-##Move to seprate file???
-#This is also horribly ineficient but it works for now
-class CommandErrorHandler(commands.Cog):
-    @commands.Cog.listener()
-    async def on_command_error(self, ctx, error):
-        if isinstance(error, commands.CommandOnCooldown):
-             msg = '**✘** You are on cooldown! Please try again in {:.2f} seconds'.format(error.retry_after)
-             await ctx.send(msg)
-        if isinstance(error, commands.MissingRequiredArgument):
-            msg = '**✘** One or more of the required arguments for that command are missing! Please resolve this and try again.'
-            await ctx.send(msg, delete_after=10)
-        if isinstance(error, commands.MissingPermissions):
-            embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0xff00f6)
-            await ctx.send(embed=embed)
-        if isinstance(error, commands.BadArgument):
-            msg = "**☠** Bad argument. You probably tried to punish a moderator or simply didnt format the argument correctly."
-            await ctx.send(msg)
-        if isinstance(error, commands.CommandNotFound):
-            embed = discord.Embed(title="That command doesnt exist!", color=0xff0000)
     
 
 #Music command
@@ -198,5 +182,5 @@ bot.add_cog(CommandErrorHandler(bot))
 bot.add_cog(Moderation(bot))
 
 ###IMPORTANT####
-bot.run("Token")
+bot.run("Njc1MTIwMjgzNjc3NjIyMzEy.Xjygwg.AvguleRFr2afPgKvY7gnWFBgkHU")
 ###IMPORTANT###

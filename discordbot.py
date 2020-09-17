@@ -1,3 +1,11 @@
+# Be cool, give credit, dont remove this please :)
+# ________       _______       ___  ___      _________    ________      ___      ________       ________     
+#|\   ___  \    |\  ___ \     |\  \|\  \    |\___   ___\ |\   __  \    |\  \    |\   ___  \    |\   __  \    
+#\ \  \\ \  \   \ \   __/|    \ \  \\\  \   \|___ \  \_| \ \  \|\  \   \ \  \   \ \  \\ \  \   \ \  \|\  \   
+# \ \  \\ \  \   \ \  \_|/__   \ \  \\\  \       \ \  \   \ \   _  _\   \ \  \   \ \  \\ \  \   \ \  \\\  \  
+#  \ \  \\ \  \   \ \  \_|\ \   \ \  \\\  \       \ \  \   \ \  \\  \|   \ \  \   \ \  \\ \  \   \ \  \\\  \ 
+#   \ \__\\ \__\   \ \_______\   \ \_______\       \ \__\   \ \__\\ _\    \ \__\   \ \__\\ \__\   \ \_______\
+#    \|__| \|__|    \|_______|    \|_______|        \|__|    \|__|\|__|    \|__|    \|__| \|__|    \|_______|
 import discord 
 import sys
 import traceback
@@ -96,7 +104,8 @@ async def kick(ctx, member : discord.Member, reason=None):
         messageok = f"{member.mention} has been kicked from {ctx.guild.name} for {reason}"
         await member.send(messageok)
         await member.kick(reason=reason)
-
+ 
+#Blatenly "approprated" (Not my code)
 # This prevents staff members from being punished 
 class Sinner(commands.Converter):
     async def convert(self, ctx, argument):
@@ -169,9 +178,8 @@ class Moderation(commands.Cog):
             await ctx.send(f"{user.mention} has been unmuted")
 
 
-    
+#End my theiving     
 
-#Music command
 ###SEE COGS FOLDER###
 bot.add_cog(fun(bot))
 bot.add_cog(Music(bot)) #Closed source, sorry

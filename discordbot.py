@@ -50,7 +50,7 @@ async def on_ready():
 #help command
 @bot.command()
 async def help(ctx):
-    await ctx.channel.send(f"***Current Commands***\nHelp - Displays this Help message \nPing - Fetches latency of bot (Aliases: Pong) \nKill - kills a member [.kill @target] (Aliases: gun) \n8ball - Magic 8 ball (Aliases: _8ball, 8ofcircles)\nCopypasta - gets a random copypasta \nhorny - banishes a user to horny jail (Aliases: hjail, jail) \n-------------------------------------------------\nPlease keep in mind that this bot is still in heavy development, things are subject to change. The bot will also frequently be down.")
+    await ctx.channel.send(f"***Current Commands***\nHelp - Displays this Help message \nPing - Fetches latency of bot (Aliases: Pong) \nKill - kills a member [.kill @target] (Aliases: gun) \n8ball - Magic 8 ball (Aliases: _8ball, 8ofcircles)\nCopypasta - gets a random copypasta \nhorny - banishes a user to horny jail (Aliases: hjail, jail) \n-------------------------------------------------\nThe code is open source and avalible on https://github.com/N3utr1n0/DiscordBotButBad")
 
 #fetch latency
 @bot.command(aliases=["pong"])

@@ -1,12 +1,9 @@
 import discord 
 import sys
 import traceback
-from cogs import commands
-from cogs import Errorlistener
-from cogs import music
-from music import Music
-from Errorlistener import CommandErrorHandler
-from commands import fun
+from cogs.commands import fun
+from cogs.Errorlistener import CommandErrorHandler
+from cogs.music import Music
 from discord import Spotify
 import asyncio
 import functools
@@ -182,5 +179,5 @@ bot.add_cog(CommandErrorHandler(bot))
 bot.add_cog(Moderation(bot))
 
 ###IMPORTANT####
-bot.run("Njc1MTIwMjgzNjc3NjIyMzEy.Xjygwg.AvguleRFr2afPgKvY7gnWFBgkHU")
+bot.run("TOKEN")
 ###IMPORTANT###

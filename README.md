@@ -6,4 +6,4 @@ I will NOT provide personal support for any issues. Feel free to modify the code
 
 There are admin commands and some other misc commands that can be extended. 
 
-This is really just a basic framework
+This is really just a basic framework feel free to edit it as you see fit, but please dont deploy it publically. Keep it in your server.

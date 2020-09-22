@@ -188,7 +188,6 @@ class Moderation(commands.Cog):
             await ctx.send(embed=embed)
 ###SEE COGS FOLDER###
 bot.add_cog(fun(bot))
-bot.add_cog(Music(bot)) #Closed source, sorry
 bot.add_cog(CommandErrorHandler(bot))
 bot.add_cog(Moderation(bot))
 

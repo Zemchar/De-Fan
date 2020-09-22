@@ -105,8 +105,6 @@ async def kick(ctx, member : discord.Member, reason=None):
         await member.send(messageok)
         await member.kick(reason=reason)
  
-#Blatenly "approprated" (Not my code)
-# This prevents staff members from being punished 
 class Sinner(commands.Converter):
     async def convert(self, ctx, argument):
         argument = await commands.MemberConverter().convert(ctx, argument) # gets a member object
@@ -117,7 +115,7 @@ class Sinner(commands.Converter):
             raise commands.BadArgument("You cannot punish other staff members") # tells user that target is a staff member
 
 # Checks if you have a muted role
-class Redeemed(commands.Converter):
+class idot(commands.Converter):
     async def convert(self, ctx, argument):
         argument = await commands.MemberConverter().convert(ctx, argument) # gets member object
         muted = discord.utils.get(ctx.guild.roles, name="Muted") # gets role object
@@ -172,14 +170,22 @@ class Moderation(commands.Cog):
     
     
     @commands.command()
-    async def unmute(self, ctx, user: Redeemed):
+    async def unmute(self, ctx, user: idot):
         if ctx.message.author.guild_permissions.administrator:
             await user.remove_roles(discord.utils.get(ctx.guild.roles, name="Muted")) # removes muted role
             await ctx.send(f"{user.mention} has been unmuted")
 
-
-#End my theiving     
-
+    #locks channel that it was invoked in
+    @commands.command(aliases=["lock", "toohorny"])
+    async def lockdown(self, ctx, error, *, time=0):
+        if ctx.message.author.guild_permissions.administrator:
+            await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=False)
+            await ctx.channel.send(f"***✓*** Locked channel for {time} seconds!")
+            await asyncio.sleep(time)
+            await ctx.channel.set_permissions(ctx.guild.default_role, send_messages=True)
+        if isinstance(error, commands.MissingPermissions):
+            embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0xff00f6)
+            await ctx.send(embed=embed)
 ###SEE COGS FOLDER###
 bot.add_cog(fun(bot))
 bot.add_cog(Music(bot)) #Closed source, sorry

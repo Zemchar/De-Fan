@@ -58,13 +58,13 @@ async def on_ready():
 #new help command
 @bot.command()
 async def help(ctx):
-    await ctx.channel.send(f"***Commands for De Fan***\nhelp - Prints this Help message\nping - Fetches the Latency of this bot\ninvite - dm's a permanent link to you so you can invite more people\nhjail - sends a user to horny jail\nkill - kills a user\n8ball - magic 8 ball\ncopypasta - prints a random copypasta to chat\nhug - hugs a user\nkiss - kisses a user\nuwu - try it and see what happens\ncoin - Flips a coin. Pretty simple\n")
+    await ctx.channel.send(f"***Commands for [BOT NAME]***\nhelp - Prints this Help message\nping - Fetches the Latency of this bot\nhjail - sends a user to horny jail\nkill - kills a user\n8ball - magic 8 ball\ncopypasta - prints a random copypasta to chat\nhug - hugs a user\nkiss - kisses a user\nuwu - try it and see what happens\ncoin - Flips a coin. Pretty simple\n")
     await ctx.channel.send(f"***Command prefix is \'.\'\nThe code is open source and avalible on <https://github.com/N3utr1n0/Discord-Bot-Basic-Framework>\nCreated by N3#6494")
 
 @bot.command()
 async def ahelp(ctx, admin: discord.Member):
     if ctx.message.author.guild.has_permissions.administrator:
-        await admin.send(f"***Admin commands for De Fan:***\n\nEach command is structured as follows: [prefix][command (can be replaced with the listed alias)] [arguments]\n\nclear - clears specified ammount of messaegs from the channel invoked in. Usage: .clear [number of messages to delete] Aliases: purge\nkick - kicks a specified user Usage: .kick @[Mention user you want to kick] Aliases: goodbye\n")
+        await admin.send(f"***Admin commands for [BOT NAME]:***\n\nEach command is structured as follows: [prefix][command (can be replaced with the listed alias)] [arguments]\n\nclear - clears specified ammount of messaegs from the channel invoked in. Usage: .clear [number of messages to delete] Aliases: purge\nkick OR ban - kicks/bans a specified user Usage: .[kick or ban] @[Mention user you want to kick/ban] Aliases: goodbye/banish\n")
 #fetch latency
 @bot.command(aliases=["pong"])
 @commands.cooldown(1, 2, commands.BucketType.user)
@@ -85,21 +85,3 @@ bot.add_cog(filter(bot)) #listeners.py #listeners.py
 ###IMPORTANT####
 bot.run("token") #Keep this token private, discord will freak if you dont
 ###IMPORTANT###
-
-
-'''''''''
-Update #4: The permanence Update
-- Bot completly Rewritten 
-- Code Cleaned Up
-- Cogs improved
-- Cogs moved to seprate file
-- Moderation Simplified
-- Removed reasons in commands for various moderation actions
-- Added Word Filter
-- .gun is now a seprate command from .kill
-- ***All*** commands invoked will no longer delete after 3 hours. All outputs are now permanent.
-- A coin flip has been added (.coin or .gamble).
-- Responses for all commands that utulize an array of responses have been extended and added to. 
-- 3 New statuses that the bot will cycle through
-- A softer "personality" has been added 
-'''''''''

@@ -1,12 +1,3 @@
-# Be cool, give credit, dont remove this please :)
-# ________       _______       ___  ___      _________    ________      ___      ________       ________     
-#|\   ___  \    |\  ___ \     |\  \|\  \    |\___   ___\ |\   __  \    |\  \    |\   ___  \    |\   __  \    
-#\ \  \\ \  \   \ \   __/|    \ \  \\\  \   \|___ \  \_| \ \  \|\  \   \ \  \   \ \  \\ \  \   \ \  \|\  \   
-# \ \  \\ \  \   \ \  \_|/__   \ \  \\\  \       \ \  \   \ \   _  _\   \ \  \   \ \  \\ \  \   \ \  \\\  \  
-#  \ \  \\ \  \   \ \  \_|\ \   \ \  \\\  \       \ \  \   \ \  \\  \|   \ \  \   \ \  \\ \  \   \ \  \\\  \ 
-#   \ \__\\ \__\   \ \_______\   \ \_______\       \ \__\   \ \__\\ _\    \ \__\   \ \__\\ \__\   \ \_______\
-#    \|__| \|__|    \|_______|    \|_______|        \|__|    \|__|\|__|    \|__|    \|__| \|__|    \|_______|
-
 import discord 
 import sys
 import traceback
@@ -24,16 +15,16 @@ class CommandErrorHandler(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
         if isinstance(error, commands.CommandOnCooldown):
-             msg = '**✘** You are on cooldown! Please try again in {:.2f} seconds'.format(error.retry_after)
-             await ctx.send(msg)
+             msg = '**✘** Sorry, you are on cooldown! Please try again in {:.2f} seconds'.format(error.retry_after)
+             await ctx.send(msg, delete_after=10)
         if isinstance(error, commands.MissingRequiredArgument):
-            msg = '**✘** One or more of the required arguments for that command are missing! Please resolve this and try again.'
+            msg = '**✘** One or more of the required arguments for that command are missing! There is probably a cooldown (nothing I can do about that)'
             await ctx.send(msg, delete_after=10)
         if isinstance(error, commands.MissingPermissions):
-            embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0xff00f6)
-            await ctx.send(embed=embed)
-        if isinstance(error, commands.BadArgument):
-            msg = "**☠** Bad argument. You probably tried to punish a moderator or simply didnt format the argument correctly."
+            msg = "Sorry but you are not a moderator on this server and cannot use this command!"
             await ctx.send(msg)
+        if isinstance(error, commands.BadArgument):
+            msg = "**☠** Bad argument. Ill be honest I dont know what a \"bad argument\" is. Its just a thing that popped up in autocomplete so I added it. You probably messed *something* up."
+            await ctx.send(msg, delete_after=10)
         if isinstance(error, commands.CommandNotFound):
-            embed = discord.Embed(title="That command doesnt exist!", color=0xff0000)
+            print("Error Raised: Invalid Command Called. No Matching Commands Found. This is most likely not a problem.")

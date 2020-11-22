@@ -1,8 +1,6 @@
 # Discord bot - a basic framework
-It works, sort of. 
+Feel free to use this code as you see fit, even if you just want parts of it :). 
+In its current state everything exept for the filter is fully functioning out of the box. 
+The filter needs some more work but its coming soon.
 
-I will NOT provide personal support for any issues. Feel free to modify the code how you see fit but please dont deploy it publically. Keep it in your server.. As it stands right now it works perfectly fine but it is tailored to my personal server
-
-There are admin commands and some other misc commands that can be extended. 
-
-This is really just a basic framework. 
+Thanks for using my code, hope it was helpful!

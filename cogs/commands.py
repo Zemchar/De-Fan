@@ -26,12 +26,6 @@ class fun(commands.Cog):
     @commands.command(aliases=["Boobah"])
     async def boobah(self, ctx):
         await ctx.send("Boobah.\n<http://danryckert.eu/>")
-    
-    @commands.command(aliases=["TheInductees"])
-    async def count(self, ctx):
-        role = discord.utils.get(ctx.guild.roles, name="Dont forget you are here forever")
-        size = role.members.size
-        await ctx.send(f"There are {size} unique members in this server")
 
     #horny jail command
     @commands.command(aliases=["hjail", "hornyjail"])
@@ -48,7 +42,7 @@ class fun(commands.Cog):
     async def kill(self, ctx, user : discord.Member):
         if user == ctx.message.author:
             await ctx.channel.send(f"{ctx.message.author.mention} commited suicide :weary:")
-        if user.id == "763576957618618428":
+        if user.id == 763576957618618428:
             await ctx.channel.send(f"No.")
         if user != ctx.message.author:
             await ctx.channel.send(f"{ctx.message.author.mention} killed {user.mention}")
@@ -57,7 +51,7 @@ class fun(commands.Cog):
     async def gun(self, ctx, user : discord.Member):
         if user == ctx.message.author:
             await ctx.channel.send(f"{ctx.message.author.mention} gunned themselves :banned::pensive:")
-        if user.id == "763576957618618428":
+        if user.id == 763576957618618428:
             await ctx.channel.send(f":menacing:                                                            :menacing:\n:menacing: I wouldnt do that If I were you... :menacing:\n:menacing:                                                            :menacing:")
         if user != ctx.message.author:
             await ctx.channel.send(f"{ctx.message.author.mention} gunned {user.mention}")
@@ -87,8 +81,7 @@ class fun(commands.Cog):
                     'Outlook not so good',
                     'Very doubtful',
                     'troll',
-                    "Uh probably",
-                    "DEATH TO THE MPLA"]
+                    "Uh probably",]
         await ctx.send(f"Question: {question}\nAnswer: {random.choice(responses)}\nAsked by {ctx.message.author.mention}")
 
     #copypasta command
@@ -113,16 +106,16 @@ class fun(commands.Cog):
         if user != ctx.message.author:
             await ctx.channel.send(f"{ctx.message.author.mention} gives you hugs {user.mention}（っ・∀・）っ ⊂(・ヮ・⊂)")
         if user == ctx.message.author:
-            await ctx.channel.send(f"{ctx.message.author.mention} hugs themself. What a lonely chap")
+            await ctx.channel.send(f"{ctx.message.author.mention} hugs themself.")
     @commands.command(aliases=["muah"])
     @commands.cooldown(1, 2, commands.BucketType.user)
     async def kiss(self, ctx, user : discord.Member):
         if user != ctx.message.author:
-            await ctx.channel.send(f"{ctx.message.author.mention} kisses {user.mention}! Idk, seems kinda horny to me.")
+            await ctx.channel.send(f"{ctx.message.author.mention} kisses {user.mention} :eyes:!")
         if user == ctx.message.author:
             await ctx.channel.send(f"{ctx.message.author.mention} kisses themself. What a lonely chap. Everybody laugh at this idot")
     
-    @commands.command(aliases=["fuck", "seks"])
+    @commands.command(aliases=["fuck", "seks"]) #I dont know what this is. Someone sent me a code snippet and i just put it in
     @commands.cooldown(1, 15, commands.BucketType.user)
     async def uwu(self, ctx):
         responses =  ["*Looks away nervously*\nY-you want to take this to the dms??",
@@ -141,4 +134,31 @@ class fun(commands.Cog):
     async def coin(self, ctx):
         #The reason for all these responses is to create a weighted chance without actually creating weighted chance
         responses = ["Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Singularity", "Edge", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", "Heads", "Tails", ]
-        await ctx.send(f"{ctx.message.author.mention} flipped a coin!\n\nThe result is **{random.choice(responses)}**")
+        response = random.choice(responses)
+        embed=discord.Embed(title=":coin: Coin Flip :coin:", description=f"{response}", color=ctx.message.author.top_role.colour)
+        await ctx.send(embed=embed)
+    
+    @commands.command(aliases=["credit2team", "c2t", "ctwot"])
+    async def credits(self, ctx):
+        embed=discord.Embed(title="The creators of De Fan Of De Way", color=0xff68b9)
+        embed.set_author(name="Credits!")
+        embed.add_field(name="<:4407_New_verified:799696049119428638>CoronerInArkansas#3639: ", value="Name Creator", inline=True)
+        embed.add_field(name="<:4407_New_verified:799696049119428638>ℑ𝔰𝔞𝔟𝔢𝔩𝔩𝔞#0116:", value="Command Ideas", inline=False)
+        embed.add_field(name="<:4407_New_verified:799696049119428638>just_bellis#5024", value="Command Ideas", inline=False)
+        embed.add_field(name="<:6520_devNew:799695876050124830>N3#6494", value="Programming ", inline=False)
+        await ctx.send(embed=embed)
+    
+    @commands.command(aliases=["swagscale", "meter"])
+    @commands.cooldown(1, 15, commands.BucketType.user)
+    async def rate(self, ctx, user : discord.Member, *, percent=None):
+        print(percent)
+        responses = ["is not very swag. step up your game", "is extremely swag :smiling_imp:", "is only a little bit swag... smh", "is sort of swag, they could do better tho", "has average swagness levels", "is pretty mf swag! hella", "is literally in the negative swagness levels. perish", "is so fukcingn swag.... awooga", "is barely swag enough to even be on this server.. ur on thin ice my guy", "is the physical embodiment of swag. they live, breathe, and eat pure swag. swag courses through their veins and pumps out of their heart. bow down", "is swag enough to say poggers unironically and not get the death penalty"]
+        if percent is None:
+            await ctx.send(f"{user.mention} {random.choice(responses)}")
+        else:
+            await ctx.send(f"{user.mention} is {random.randint(0, 100)}% swag")
+
+    @commands.command(aliases=["aisgdjha"])
+    async def say(self, ctx, *, words):
+        await ctx.message.delete()
+        await ctx.send(f"{words}")

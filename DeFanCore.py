@@ -324,5 +324,5 @@ bot.add_cog(moderationtools(bot)) #moderation.py
 bot.add_cog(filter(bot)) #This is not really a filter in all honesty
 bot.add_cog(Music(bot))
 ###IMPORTANT####
-bot.run("NzYzNTc2OTU3NjE4NjE4NDI4.X35udQ.g6S7RTkoVIKV4vIOHEW8X1_hj9E") #Keep this token private, discord will freak if you dont
+bot.run("Token") #Keep this token private, discord will freak if you dont
 ###IMPORTANT###

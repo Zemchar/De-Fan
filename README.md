@@ -4,7 +4,7 @@
 
 
 A wonderful multipuropose and fully customizable bot I wrote in my spare time.
-
+[![CodeFactor](https://www.codefactor.io/repository/github/jun3iper/de-fan/badge)](https://www.codefactor.io/repository/github/jun3iper/de-fan)
 # Things the bot can do
 - Some moderation tools
 - Fun commands
